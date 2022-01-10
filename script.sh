@@ -2,7 +2,7 @@ NAME="puppetfile-syntax-validate" # Set to anything here. Just the name of the j
 trap 'on_failure' ERR
 on_failure() {
     ret=$?
-    for i in $(ls /cd4pe_job_working_dir);
+    for i in /cd4pe_job_working_dir;
     do
       if [[ ! $i =~ "*" ]]; then
         if grep -q $NAME /cd4pe_job_working_dir/$i/cd4pe_job/jobs/unix/JOB; then
