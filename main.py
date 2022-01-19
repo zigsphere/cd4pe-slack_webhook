@@ -7,7 +7,9 @@ from pathlib import Path
 from yaml import safe_load
 
 # Get job name from environment variable
-JOB = os.getenv('JOB') # Set this env variable in the docker arguments (-e JOB=FOO). Also, in the job commands, enter NAME=FOO. We are going to compare the env var with the text in the job.
+# Set this env variable in the docker arguments (-e JOB=FOO). Also, in the job commands, enter NAME=FOO. 
+# We are going to compare the env var with the text in the job.
+JOB = os.getenv('JOB')
 
 def check_duplicates_for_key(data: dict, paths: list):
   data_new = {}
